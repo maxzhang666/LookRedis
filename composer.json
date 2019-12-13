@@ -1,0 +1,42 @@
+{
+    "name": "wandhi/look_redis",
+    "description": "基于tp6、layui的redis可视化管理工具",
+    "type": "project",
+    "keywords": [
+        "redis","manage"
+    ],
+    "homepage": "https://www.wandhi.com",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "MaxZhang",
+            "email": "373884384@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "topthink/framework": "^6.0.0",
+        "topthink/think-orm": "^2.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.2",
+        "topthink/think-trace":"^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app"
+        },
+        "psr-0": {
+            "": "extend/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php think service:discover",
+            "@php think vendor:publish"
+        ]
+    }
+}
